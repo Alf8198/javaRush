@@ -1,0 +1,46 @@
+Самая длинная строка
+1. Создай список строк.
+2. Считай с клавиатуры 5 строк и добавь в список.
+3. Используя цикл, найди самую длинную строку в списке.
+4. Выведи найденную строку на экран.
+5. Если таких строк несколько, выведи каждую с новой строки.
+
+Требования:
+1. Объяви переменную типа ArrayList (список строк) и сразу проинициализируй ee.
+2. Программа должна считывать 5 строк с клавиатуры и записывать их в список.
+3. Программа должна выводить самую длинную строку на экран.
+4. Если есть несколько строк с длиной равной максимальной, то нужно вывести каждую из них с новой строки.
+
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+
+/* 
+Самая длинная строка
+*/
+
+public class Solution {
+    public static void main(String[] args) throws Exception {
+
+        Scanner r = new Scanner(System.in);
+        ArrayList<String> list = new ArrayList();
+        for (int i = 0; i < 5; i++){
+            list.add(r.nextLine());
+        }
+        int[] arr = new int[list.size()];
+        for (int i = 0; i != list.size(); i++){
+            arr [i] = list.get(i).length();
+        }
+        Arrays.sort(arr);
+        for (int i = 0; i != list.size(); i++){
+            if (list.get(i).length() == arr[list.size()-1]){
+                System.out.println(list.get(i));
+            }
+        }
+        //напишите тут ваш код
+    }
+}
